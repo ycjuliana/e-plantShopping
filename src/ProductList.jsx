@@ -5,8 +5,10 @@ import { addItem } from './CartSlice';
 import { useSelector, useDispatch } from 'react-redux';
 function ProductList({ onHomeClick }) {
     const [showCart, setShowCart] = useState(false);
-    const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
+    const [showPlants, setShowPlants] = useState(false); 
     const [addedToCart, setAddedToCart] = useState({});
+    const cart = useSelector((state) => state.cart);
+    const dispatch = useDispatch();
 
     const plantsArray = [
         {
